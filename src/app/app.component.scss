@@ -1,0 +1,67 @@
+.app-wrapper {
+  padding-top: 3vh;
+
+  h1 {
+    text-align: center;
+    font-family: 'Schwifty', Arial;
+    font-size: 4rem;
+    color: #d3ac8c;
+  }
+
+  .searchbox {
+    width: 80%;
+    margin: 15px auto;
+    .search-button {
+      background: #bee5fd;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+
+  .results-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    .nav-btn {
+      &.next-btn {
+        float: right;
+      }
+      color: #fff474;
+      background-color: #97ce4c;
+      border-color: #649b19;
+      font-family: Schwifty;
+    }
+  }
+
+  .error-message {
+    text-align: center;
+    color: #fb6467;
+    font-size: 1.5rem;
+  }
+
+  .lds-dual-ring {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  .lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #12acc7;
+    border-color: #12acc7 transparent #85bb80 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

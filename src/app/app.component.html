@@ -1,0 +1,23 @@
+<div class="app-wrapper">
+    <h1>Rick and Morty character search</h1>
+    <div class="input-group searchbox">
+        <input class="form-control" [ngClass]="{'is-invalid': error}" type="text" placeholder="Begin typing to search..." [(ngModel)]="query"
+            (keyup.enter)="getCharacters(query)" />
+        <span class="input-group-addon search-button" (click)="getCharacters(query)">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+    <div class="results-wrapper" *ngIf="!error && !loading && characters.length > 0">
+        <button type="button" class="nav-btn btn btn-primary btn-md active" [hidden]="hideNavigationButtons" [disabled]="currentPage <= 1"
+            (click)="getCharacters(query, currentPage - 1)">Previous</button>
+        <button type="button" class="nav-btn btn btn-primary btn-md active next-btn" [hidden]="hideNavigationButtons" [disabled]="nextPage === null"
+            (click)="getCharacters(query, nextPage)">Next</button>
+        <app-search-results [characters]="characters" [currentPage]="currentPage" [nextPage]="nextPage"></app-search-results>
+        <button type="button" class="nav-btn btn btn-primary btn-md active" [hidden]="hideNavigationButtons" [disabled]="currentPage <= 1"
+            (click)="getCharacters(query, currentPage - 1)">Previous</button>
+        <button type="button" class="nav-btn btn btn-primary btn-md active next-btn" [hidden]="hideNavigationButtons" [disabled]="nextPage === null"
+            (click)="getCharacters(query, nextPage)">Next</button>
+    </div>
+    <div *ngIf="!error && loading" class="lds-dual-ring"></div>
+    <div *ngIf="error" class="error-message">No results found!</div>
+</div>

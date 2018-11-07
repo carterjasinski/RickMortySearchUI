@@ -1,0 +1,17 @@
+.results-row {
+  text-transform: capitalize;
+
+  &:hover {
+    background: rgba(255, 248, 116, 0.6);
+  }
+
+  .property-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  .property-value {
+    margin-left: 5px;
+  }
+}
